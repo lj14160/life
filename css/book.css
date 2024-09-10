@@ -1,0 +1,149 @@
+.book2 {
+    position: absolute;
+    left: 150px;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    /* background-color: #fff; */
+    perspective: 2000px;
+    perspective-origin: -100px -1000px;
+}
+
+.ye {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    border: 1px solid #fff;
+    /* backface-visibility: hidden; */
+    transform-origin: left;
+    background-color: rgba(181, 221, 183, 0.5);
+    z-index: 12;
+    font-size: 14px;
+}
+
+.ye:nth-of-type(1) {
+    padding: 30px 40px 20px 40px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    animation: fans 10s 1s linear forwards;
+}
+
+.ye:nth-of-type(2) {
+    padding-top: 5px;
+    animation: fans 10s 2s linear infinite;
+}
+
+.ye:nth-of-type(3) {
+    padding-top: 15px;
+    animation: fans 10s 3s linear infinite;
+}
+
+.ye:nth-of-type(4) {
+    padding-top: 25px;
+    animation: fans 10s 4s linear infinite;
+}
+
+.ye:nth-of-type(5) {
+    padding-top: 35px;
+    animation: fans 10s 5s linear infinite;
+}
+
+.ye:nth-of-type(6) {
+    padding-top: 45px;
+    animation: fans 10s 6s linear infinite;
+}
+
+.ye:nth-of-type(7) {
+    padding-top: 55px;
+    animation: fans 10s 7s linear infinite;
+}
+
+.ye:nth-of-type(8) {
+    padding-top: 65px;
+    animation: fans 10s 8s linear infinite;
+}
+
+.ye:nth-of-type(9) {
+    padding-top: 75px;
+    animation: fans 10s 9s linear infinite;
+}
+
+.ye:nth-of-type(10) {
+    padding-top: 85px;
+    animation: fans 10s 10s linear infinite;
+}
+
+.ye:nth-of-type(11) {
+    padding-top: 95px;
+    animation: fans 10s 11s linear infinite;
+}
+
+.ye:nth-of-type(12) {
+    z-index: 1;
+    padding: 30px 40px 20px 40px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+@keyframes fans {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    20% {
+        transform: rotateY(-36deg);
+    }
+
+    40% {
+        transform: rotateY(-72deg);
+    }
+
+    60% {
+        transform: rotateY(-108deg);
+    }
+
+    80% {
+        transform: rotateY(-144deg);
+    }
+
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+.detail {
+    position: absolute;
+    top: 360px;
+    left: 30px;
+    width: 320px;
+    padding: 0;
+}
+
+.show {
+    /* background-color: #fff; */
+    width: 320px;
+    height: 40px;
+}
+
+.word {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 320px;
+
+}
+
+.word li {
+    display: block;
+    font: 16px/40px '楷体';
+    list-style: none;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+}

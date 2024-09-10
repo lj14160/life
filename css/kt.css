@@ -1,0 +1,51 @@
+.k-t {
+  position: absolute;
+  color: #fff;
+  font-size: 0.5rem;
+  height: 1rem;
+  overflow: hidden;
+  animation: showtext 10s linear infinite;
+  mix-blend-mode: difference;
+}
+.k-t::after {
+  content: "看不透的人心，放不下的牵挂，走不完的坎坷，越不过的无奈，忘不了的昨天，忙不忘的今天，想不到的明天，最后不知道消失在哪一天，这就是人生";
+  width: 100%;
+  height: 100%;
+  /* color: #fff; */
+  font-size: 0.5rem;
+  animation: showword 60s linear infinite;
+}
+
+@keyframes showtext {
+  from {
+    top: 5vh;
+    left: 50vw;
+    width: 0;
+  }
+
+  to {
+    top: 98vh;
+    left: 1vw;
+    width: 98vw;
+  }
+}
+@keyframes showword {
+  0% {
+    content: "看不透的人心，放不下的牵挂，走不完的坎坷，越不过的无奈，忘不了的昨天，忙不忘的今天，想不到的明天，最后不知道消失在哪一天，这就是人生";
+  }
+  20% {
+    content: "你站在桥上看风景，看风景的人在楼上看你；明月装饰了你的窗子，你装饰了别人的梦";
+  }
+  40% {
+    content: "生命本是一场孤独的跋涉，无论人生路上多么纷繁热闹，终究将抽身出来独自细水流年";
+  }
+  60% {
+    content: "对于一个普通人来说，只好听命于生活的裁决，这不是宿命而是无法超越的客观条件";
+  }
+  80% {
+    content: "我们曾勇往直前，但逃不过孤独迷茫，我们曾豪情万丈，却藏不住遍体鳞伤";
+  }
+  100% {
+    content: "终有一天你会和自己和解，咽下所有脾气磨平一身的棱角，笑对曾经讨厌的人与事，变成一个不动声色的人";
+  }
+}

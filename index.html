@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>人生</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      .body {
+        height: 100vh;
+        background-color: #000;
+        text-align: center;
+        overflow: hidden auto;
+        user-select: none;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+
+      .tab {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        scroll-snap-align: start;
+      }
+
+      .yung {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        /* z-index: 999; */
+        pointer-events: none;
+      }
+
+      .cont {
+        overflow: hidden;
+        color: #222;
+        writing-mode: vertical-lr;
+        opacity: 0.7;
+        mix-blend-mode: difference;
+        padding: 10px;
+      }
+
+      .light {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        filter: blur(50px);
+        z-index: 998;
+      }
+
+      #can {
+        position: fixed;
+        top: 0;
+        right: 0;
+        /* background: #000; */
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/clock.css" />
+    <link rel="stylesheet" type="text/css" href="./css/book.css" />
+    <link rel="stylesheet" type="text/css" href="./css/search.css" />
+    <link rel="stylesheet" type="text/css" href="./css/kt.css" />
+    <link rel="stylesheet" type="text/css" href="./css/sun.css" />
+    <link rel="stylesheet" type="text/css" href="./css/yueli.css" />
+    <link rel="stylesheet" type="text/css" href="./css/luop.css" />
+  </head>
+
+  <body>
+    <canvas id="can"></canvas>
+    <div class="body">
+      <div class="tab t1">
+        <div class="yung">
+          <div class="cont"></div>
+          <div class="light"></div>
+        </div>
+        <div class="life">人生到处知何似 应似飞鸿踏雪泥</div>
+        <div class="clock-box">
+          <div class="clock">
+            <div class="rq">
+              <div class="mon"></div>
+              <div class="line"></div>
+              <div class="dat"></div>
+            </div>
+            <div class="time"></div>
+          </div>
+          <div class="fa">
+            <span class="ke"></span>
+          </div>
+          <div class="yuan">
+            <div class="hour"></div>
+            <div class="min"></div>
+            <div class="sec"></div>
+          </div>
+        </div>
+
+        <div class="addClass"></div>
+        <div class="search">
+          <div class="s-nav">
+            <div class="s-n s-active" data-id="bd">百度搜索</div>
+            <div class="s-n" data-id="gs">人生轨迹</div>
+            <div class="s-n" data-id="jb">时移事改</div>
+          </div>
+          <div class="s-con">
+            <div class="bd">
+              <input type="text" class="sword" placeholder="众里寻他千百度" />
+              <ul class="ul"></ul>
+            </div>
+            <div class="gs">
+              <input
+                type="text"
+                class="gs-inp"
+                placeholder="默认:y=Math.sin(x)*300+(innerHeight-400)"
+              />
+              <div class="tip">
+                人生的轨迹早已受到限制<br />
+                即使改变，也难逃层层的枷锁
+              </div>
+            </div>
+            <div class="jb">
+              <textarea rows="2" class="tex" placeholder="textStyle='#f00'">
+console.log(lifelive)</textarea
+              >
+            </div>
+          </div>
+        </div>
+        <div class="book2">
+          <div class="ye">生活</div>
+          <div class="ye">本以为青春是殊途同归<br />谁知它是后会无期</div>
+          <div class="ye">腹有诗书气自华<br />最是书香能致远</div>
+          <div class="ye">闲看庭前花开花落<br />漫随天外云卷云舒</div>
+          <div class="ye">历经繁华方知平凡是真<br />回首沧桑只想平淡如水</div>
+          <div class="ye">时间磨去了年少轻狂<br />沉淀了冷暖自知</div>
+          <div class="ye">表情里透出进来心境<br />眉间藏有过往岁月</div>
+          <div class="ye">强颜欢笑定妆容<br />寂清无人返归真</div>
+          <div class="ye">红尘陌上独自行走<br />无言沉默独熬苦痛</div>
+          <div class="ye">命里有时终须有<br />命里无时莫强求</div>
+          <div class="ye">离去的都是风景<br />留下的才是人生</div>
+          <div class="ye">人生</div>
+        </div>
+        <div class="detail">
+          <div class="show"></div>
+          <ul class="word"></ul>
+        </div>
+        <div class="k-t"></div>
+      </div>
+      <div class="tab t2">
+        <canvas id="canvas3" class="pos"></canvas>
+        <div class="ear">
+          <canvas id="canvas1" width="820" height="820" class="pos"></canvas>
+          <canvas id="canvas2" width="820" height="820" class="pos"></canvas>
+        </div>
+        <div class="yue yue-li">我站在人生阅历的风口，吹掉了一生的纯真</div>
+      </div>
+      <div class="tab t3">
+        <div class="l-clock">
+          <div class="temp l-year">
+            <span></span>
+          </div>
+          <div class="temp l-month"></div>
+          <div class="temp l-day"></div>
+          <div class="temp l-hour"></div>
+          <div class="temp l-minute"></div>
+          <div class="temp l-second"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //创建同名回调函数解决跨域
+      function download(data) {
+        let sul = get(".ul");
+        sul.innerHTML = "";
+        for (var i = 0; i < data.s.length; i++) {
+          let sli = document.createElement("li");
+          let sa = document.createElement("a");
+          sa.innerText = data.s[i];
+          sa.href = `http://wwww.baidu.com/s?wd=${data.s[i]}`;
+          sa.target = "_blank";
+          sli.appendChild(sa);
+          sul.appendChild(sli);
+        }
+      }
+    </script>
+    <script src="./js/canvas.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/text.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/sun.js"></script>
+    <script src="./js/yueli.js"></script>
+    <script src="./js/luop.js"></script>
+  </body>
+</html>

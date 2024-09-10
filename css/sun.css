@@ -1,0 +1,22 @@
+.ear{
+    position: relative;
+    width: 820px;
+    height: 820px;
+    margin-left:50% ;
+    background-color:transparent;
+    transform-style: preserve-3d;
+    transform:translateX(-50%) rotateX(30deg);
+    transform-origin: 0 0;
+    perspective: 2600px;
+}
+.pos{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+/* #bb{
+    position: absolute;
+    right: 0;
+    color: #fff;
+} */

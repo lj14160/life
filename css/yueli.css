@@ -1,0 +1,68 @@
+.yue {
+  display: none;
+}
+
+.yue-li {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1rem;
+  color: #fff;
+  font-family: "楷体";
+  /* ,monospace */
+}
+.yue-li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  animation: b-go 5s steps(19) 500ms forwards, del 3s steps(8) 6s forwards;
+}
+.yue-li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+  animation: b-shan 0.5s steps(19) infinite, b-go 5s steps(19) 500ms forwards,
+    del 3s steps(8) 6s forwards;
+}
+@keyframes b-shan {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #fff;
+  }
+}
+@keyframes b-go {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes del {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 57.9%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .yue-li {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .yue-li {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,43 @@
+.l-clock {
+    position: absolute;
+    left:50%;
+    top:50%;
+    width: 1000px;
+    height: 1000px;
+    transform: translate(-50%,-50%) scale(0.7);
+    color: rgb(92, 91, 91);
+    font-size: 18px;
+
+}
+.temp {
+    position: absolute;
+    top: 0;
+    width: 1000px;
+    height: 1000px;
+    transition: all .5s;
+}
+/* 把所有的span定位到一起 */
+.temp span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -20px;
+}
+.l-clock  span {
+    display: block;
+}
+/* 现在的时间变色 */
+.l-now {
+    color: white;
+    text-shadow: 0 0 10px white;
+}
+/* 让年份居中显示 */
+.l-year span {
+    font-size: 24px;
+    width: 90px;
+    margin-left: -35px;
+    margin-top: -15px;
+}
